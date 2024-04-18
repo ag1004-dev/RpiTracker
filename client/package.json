@@ -32,10 +32,9 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "auto-updater": "^1.0.2",
     "child_process": "^1.0.2",
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
-    "moment": "^2.24.0",
-    "ws": "^7.2.3"
-  }
+
 }
