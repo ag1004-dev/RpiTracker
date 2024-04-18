@@ -16,6 +16,7 @@ var app = express()
 const router = require('./routes/index')(app);
 require('dotenv').config({path:__dirname+'/.env'})
 const Helper = require('./Helper.js');
+
 const  AutoUpdater = require('auto-updater');
 const autoupdater = new AutoUpdater({
   pathToJson: '',
@@ -73,6 +74,7 @@ const autoupdater = new AutoUpdater({
     // Start checking
     autoupdater.fire('check');
 
+
 moment.suppressDeprecationWarnings = true;
 
 const ControlPort = process.env.web_interface_port || 3000;
@@ -113,7 +115,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', router)
-app.listen(ControlPort, () => Logger(`Admin web interface started on port ${ControlPort}`))
+app.listen(ControlPort, () => Logger(`Admin web interface started on http://localhost:${ControlPort}`))
 
 function noop() { }
 function heartbeat() { // pong
@@ -256,7 +258,7 @@ async function printConnections() {
 }
 
 const SendAction = async function SendAction(action, id) {
-  console.log("SendAction " + action + " id:" + id)
+  console.log("received command " + Helper.getKeyByValue(Protocol, action) + " from " + id)
   let ob = { "msg": "execute", "command": action }
   ob = JSON.stringify(ob)
   for (i = 0; i < clientInfo.length; i++)
