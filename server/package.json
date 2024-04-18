@@ -1,29 +1,26 @@
 {
-  "name": "rpi_tracker_server",
+  "name": "rpi_tracker_client",
   "version": "1.0.1",
-  "description": "Middleware server between clients ( remote machines , such a raspberry pi) and you , admin behind your browser.Typically this runs as service 24/7, see unix_service folder for more.",
-  "main": "server.js",
+  "description": "Client runs on machine you want to monitor , controll over time.You be able to do daily tasks on your servers. Typically this runs as service 24/7, see unix_service folder for more.",
+  "main": "client.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node client.js",
+    "dev": "nodemon client.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kos-M/RpiTracker.git"
   },
-  "auto-updater": {
-    "repo": "Kos-M/RpiTracker/",
-    "branch": "devel/server"
-  },
   "keywords": [
     "websocket",
-    "server",
+    "client",
     "rpi",
     "tracker",
     "remote",
     "control",
     "client-server",
-    "panel"
+    "socket-client",
+    "node client service"
   ],
   "author": "Kos-M",
   "license": "MIT",
@@ -35,13 +32,9 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-
+    "auto-updater": "^1.0.2",
     "child_process": "^1.0.2",
+    "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
-    "express": "^4.18.2",
-    "express-session": "^1.17.0",
-    "moment": "^2.29.4",
-    "pug": "^2.0.4",
-    "ws": "^7.4.6"
-  }
+
 }
