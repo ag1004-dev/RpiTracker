@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/Kos-M/RpiTracker.git"
   },
+  "auto-updater": {
+    "repo": "Kos-M/RpiTracker/",
+    "branch": "devel/server"
+  },
   "keywords": [
     "websocket",
     "server",
@@ -31,13 +35,13 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-    "body-parser": "^1.20.1",
+
     "child_process": "^1.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.18.2",
     "express-session": "^1.17.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "pug": "^2.0.4",
-    "ws": "^7.2.3"
+    "ws": "^7.4.6"
   }
 }
